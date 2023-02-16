@@ -1,6 +1,6 @@
-import fakeBurgersMenu from "./fakeBurgersMenu"
-import fakeDrinksMenu from "./fakeDrinksMenu"
-import fakeSidesMenu from "./fakeSidesMenu"
+import fakeBurgersMenu from "../Datas/fakeBurgersMenu"
+import fakeDrinksMenu from "../Datas/fakeDrinksMenu"
+import fakeSidesMenu from "../Datas/fakeSidesMenu"
 import MenuSection from "./MenuSection"
 
 const WholeMenu = () => {

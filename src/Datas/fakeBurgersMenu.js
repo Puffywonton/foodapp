@@ -11,8 +11,8 @@ const fakeBurgersMenu = [
     },
     {
         id: "b2",
-        title: "Le Cheeseburger",
-        description: "how about a slice of cheese with it?",
+        title: "Le Double",
+        description: "Double the steaks, double the pleasure",
         price: 6.99,
         img: imgPlaceholder,
         imgAlt: "a sweet burger",
@@ -27,8 +27,8 @@ const fakeBurgersMenu = [
     },
     {
         id: "b4",
-        title: "Le Houseburger",
-        description: "Our finest burger up to date",
+        title: "Le Veggyburger",
+        description: "A healthy alternative",
         price: 8.99,
         img: imgPlaceholder,
         imgAlt: "a sweet burger",

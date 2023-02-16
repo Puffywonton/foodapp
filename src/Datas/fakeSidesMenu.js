@@ -3,28 +3,28 @@ const imgPlaceholder = "https://via.placeholder.com/100"
 const fakeSidesMenu = [
     {
         id: "s1",
-        title: "fries",
+        title: "Les Fries",
         price: 2.99,
         img: imgPlaceholder,
         imgAlt: "sides"
     },
     {
         id: "s2",
-        title: "chili fries",
+        title: "Les Chili Fries",
         price: 5.99,
         img: imgPlaceholder,
         imgAlt: "sides"
     },
     {
         id: "s3",
-        title: "potatoes",
+        title: "Les Potatos",
         price: 3.99,
         img: imgPlaceholder,
         imgAlt: "sides"
     },
     {
         id: "s4",
-        title: "spicy potatos",
+        title: "Les Spicy Potatos",
         price: 5.99,
         img: imgPlaceholder,
         imgAlt: "sides"

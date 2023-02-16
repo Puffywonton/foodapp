@@ -3,28 +3,28 @@ const imgPlaceholder = "https://via.placeholder.com/100"
 const fakeDrinksMenu = [
     {
         id: "d1",
-        title: "coca-cola",
+        title: "Coca-cola",
         price: 1.99,
         img: imgPlaceholder,
         imgAlt: "a can of drink"
     },
     {
         id: "d2",
-        title: "sprite",
+        title: "Sprite",
         price: 1.99,
         img: imgPlaceholder,
         imgAlt: "a can of drink"
     },
     {
         id: "d3",
-        title: "fanta",
+        title: "Fanta",
         price: 1.99,
         img: imgPlaceholder,
         imgAlt: "a can of drink"
     },
     {
         id: "d4",
-        title: "dr Pepper",
+        title: "Dr Pepper",
         price: 1.99,
         img: imgPlaceholder,
         imgAlt: "a can of drink"

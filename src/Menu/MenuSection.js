@@ -1,3 +1,4 @@
+import SectionTitle from "../UI/SectionTitle"
 import MenuItem from "./MenuItem"
 import classes from './MenuSection.module.css'
 
@@ -16,9 +17,7 @@ const MenuSection = (props) => {
 
     return(
         <section className={classes.section}>
-            <hr />
-            <h2>{props.title}</h2>
-            <hr />
+            <SectionTitle title={props.title}/>
             <ul>
                 {sectionList}
             </ul>
