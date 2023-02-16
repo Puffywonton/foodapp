@@ -1,0 +1,34 @@
+.mainContainer {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 14px;
+    height: 5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+}
+
+.presentationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.title{
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    align-items: bottom;
+}
+
+.description{
+    font-size: small;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
