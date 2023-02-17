@@ -1,7 +1,6 @@
 import fakeBurgersMenu from "./Datas/fakeBurgersMenu";
 import ConfigureBurger from "./Menu/ConfigureBurger";
 import WholeMenu from "./Menu/WholeMenu";
-import MockUp from "./MockUp";
 
 function App() {
   return (
