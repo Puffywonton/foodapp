@@ -83,14 +83,11 @@ const Test = () => {
     }
 
     const CatRecap = (props) => {
-        console.log("hello2", props.answers)
         let tempArray = []
         for (let e in props.answers[props.category]) {
-            console.log("is it here", e)
-            if (!e === false) {
-                console.log("youpi")
+            if (props.answers[props.category][e] === true) {
+                tempArray.push(e)
             }
-            tempArray.push(e)
         }
         return (
             <div>
@@ -103,7 +100,6 @@ const Test = () => {
     }
 
     const OrderRecap = () => {
-        console.log("hello")
         const answersTest = answers
         return (
             <div className={classes.card}>
