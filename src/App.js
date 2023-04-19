@@ -1,14 +1,15 @@
-import fakeBurgersMenu from "./Datas/fakeBurgersMenu";
-import ConfigureBurger from "./Menu/ConfigureBurger";
-import WholeMenu from "./Menu/WholeMenu";
+import Test from "./components/Test";
+
+
 
 function App() {
   return (
     // <WholeMenu />
-    <ConfigureBurger
-      title={fakeBurgersMenu[0].title}
-      description={fakeBurgersMenu[0].description}
-    />
+    // <ConfigureBurger
+    //   title={fakeBurgersMenu[0].title}
+    //   description={fakeBurgersMenu[0].description}
+    // />
+    <Test />
   );
 }
 

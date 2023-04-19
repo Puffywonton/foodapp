@@ -1,0 +1,26 @@
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: lightblue;
+    height: 5rem;
+}
+
+.navButton {
+    background-color: white;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.current{
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: lightgreen;
+}
+
+.navButton:hover {
+    background-color: aqua;
+}
