@@ -25,10 +25,10 @@ const ConfigureBurger = (props) => {
                 title="Do you want some sides with that?"
                 list={fakeSidesMenu}
             /> 
-            {/* <Options
+            <Options
                 title="Are you thirsty?"
                 list={fakeDrinksMenu}
-            /> */}
+            />
         </div>
     )
 }
