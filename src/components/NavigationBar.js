@@ -1,9 +1,8 @@
 import classes from './NavigationBar.module.css'
 
 const NavigationBar = (props) => {
-
     const navButtonHandler = (event) => {
-        let newStep = +event.target.textContent
+        let newStep = +event.target.id
         props.setStep(newStep)
     }
 
@@ -15,11 +14,11 @@ const NavigationBar = (props) => {
 
     return (
         <div className={classes.navBar}>
-            <div onClick={navButtonHandler} className={navBar1Classes}>1</div>
-            <div onClick={navButtonHandler} className={navBar2Classes}>2</div>
-            <div onClick={navButtonHandler} className={navBar3Classes}>3</div>
-            <div onClick={navButtonHandler} className={navBar4Classes}>4</div>
-            <div onClick={navButtonHandler} className={navBar5Classes}>5</div>
+            <div onClick={navButtonHandler} id={1} className={navBar1Classes}>Toppings</div>
+            <div onClick={navButtonHandler} id={2} className={navBar2Classes}>Sauces</div>
+            <div onClick={navButtonHandler} id={3} className={navBar3Classes}>Sides</div>
+            <div onClick={navButtonHandler} id={4} className={navBar4Classes}>Drinks</div>
+            <div onClick={navButtonHandler} id={5} className={navBar5Classes}>Recap</div>
         </div>    
     )
 }

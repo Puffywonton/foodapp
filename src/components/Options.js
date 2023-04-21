@@ -1,6 +1,6 @@
 import OptionLi from './OptionLi'
 import classes from './Options.module.css'
-
+import MenuBottomNavigation from './MenuBottomNavigation'
 
 const Options = (props) => {
 
@@ -15,11 +15,12 @@ const Options = (props) => {
     />)
 
     return (
-        <div>
+        <div className={classes.card}>
             <h4 className={classes.title}>{props.title}</h4>
             <ul className={classes.list}>
                 {optionList}
             </ul>
+            <MenuBottomNavigation step={props.step} setStep={props.setStep} />
         </div>
     )
 }

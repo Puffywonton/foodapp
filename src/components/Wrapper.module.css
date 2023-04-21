@@ -1,0 +1,7 @@
+.wrapper {
+    padding-top: 5rem;
+    margin: auto;
+    max-width: 375px;
+    display: flex;
+    justify-content: center;
+}

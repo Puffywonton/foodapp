@@ -1,6 +1,7 @@
-.buttonControl {
-    padding-top: 2rem;
+.card {
+    padding: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

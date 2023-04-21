@@ -1,15 +1,20 @@
 import { useState } from 'react'
 import classes from './Test.module.css'
 import NavigationBar from './NavigationBar'
-import PrevNextButtons from './PrevNextButtons'
 import Options from './Options'
 import fakeToppingList from '../Datas/fakeToppingsList'
 import fakeSaucesList from '../Datas/fakeSaucesList'
 import fakeSidesMenu from '../Datas/fakeSidesMenu'
 import fakeDrinksMenu from '../Datas/fakeDrinksMenu'
+import MenuBottomNavigation from './MenuBottomNavigation'
+import MenuOrderRecap from './MenuOrderRecap'
+
 
 const Test = () => {
     const [step, setStep] = useState(1)
+
+    const stepNames = ['Toppings', 'Sauces', 'Sides', 'Drinks', 'Recap']
+
     const [answers, setAnswers] = useState({
         toppings: {},
         sauces: {},
@@ -39,7 +44,10 @@ const Test = () => {
                 answers={answers}
                 category="toppings"
                 exclusive=""
-            />
+                step={step}
+                setStep={setStep}
+                stepNames={stepNames}
+            />      
         )
     }
 
@@ -52,6 +60,9 @@ const Test = () => {
                 answers={answers}
                 category="sauces"
                 exclusive=""
+                step={step}
+                setStep={setStep}
+                stepNames={stepNames}
             />
         )
     }
@@ -65,7 +76,10 @@ const Test = () => {
                 answers={answers}
                 category="sides"
                 exclusive="true"
-            />
+                step={step}
+                setStep={setStep}
+                stepNames={stepNames}
+            />      
         )
     }
 
@@ -78,59 +92,33 @@ const Test = () => {
                 answers={answers}
                 category="drink"
                 exclusive="true"
+                step={step}
+                setStep={setStep}
+                stepNames={stepNames}
             />
-        )
-    }
-
-    const CatRecap = (props) => {
-        let tempArray = []
-        for (let e in props.answers[props.category]) {
-            if (props.answers[props.category][e] === true) {
-                tempArray.push(e)
-            }
-        }
-        return (
-            <div>
-                <h3>for {props.category}:</h3>
-                <div>{tempArray.map(item =>
-                    <p key={item}>{item}</p>)}
-                </div>
-            </div>    
-        )
-    }
-
-    const OrderRecap = () => {
-        const answersTest = answers
-        return (
-            <div className={classes.card}>
-                <h2>Confirm</h2>
-                <div>
-                    <CatRecap answers={answersTest} category="toppings" />
-                    <CatRecap answers={answersTest} category="sauces" />
-                    <CatRecap answers={answersTest} category="sides" />
-                    <CatRecap answers={answersTest} category="drink" />
-                </div>
-            </div>
         )
     }
 
     const Step5 = () => {
         return (
-            <OrderRecap />
+            <MenuOrderRecap
+                answers={answers}
+                step={step}
+                setStep={setStep}
+                setAnswers={setAnswers}
+            />
         )
     }
-    
 
     return (
-        <>
+        <div className={classes.module}>
             <NavigationBar step={step} setStep={setStep} />
             {step === 1 ? <Step1 /> : ''}
             {step === 2 ? <Step2 /> : ''}
             {step === 3 ? <Step3 /> : ''}
             {step === 4 ? <Step4 /> : ''}
             {step === 5 ? <Step5 /> : ''}
-            <PrevNextButtons step={step} setStep={setStep} />
-        </>       
+        </div>       
     )
 }
 
