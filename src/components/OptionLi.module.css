@@ -6,3 +6,11 @@
     justify-content: space-between;
 }
 
+
+.label :hover{
+    background-color: grey;
+}
+
+input {
+    size: 1rem
+}

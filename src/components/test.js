@@ -23,6 +23,8 @@ const Test = () => {
     })
 
     const answerHandler = (event) => {
+        console.log("hello")
+        console.log(event)
         const category = [event.target.attributes[3].value]
         const exclusive = [event.target.attributes[4].value][0]
         const updatedAnswers = {
