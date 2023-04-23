@@ -13,15 +13,18 @@ const Options = (props) => {
         category={props.category}
         exclusive={props.exclusive}
     />)
-
-    return (
-        <div className={classes.card}>
-            <h4 className={classes.title}>{props.title}</h4>
-            <ul className={classes.list}>
-                {optionList}
-            </ul>
-            <MenuBottomNavigation step={props.step} setStep={props.setStep} />
-        </div>
-    )
+    if (props.id === props.step) {
+        return (
+            <div className={classes.card}>
+                <h4 className={classes.title}>{props.title}</h4>
+                <ul className={classes.list}>
+                    {optionList}
+                </ul>
+                <MenuBottomNavigation step={props.step} setStep={props.setStep} stepNames={props.stepNames} />
+            </div>
+        )
+    } else {
+        return
+    }
 }
 export default Options

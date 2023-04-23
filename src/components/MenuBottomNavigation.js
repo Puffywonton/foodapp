@@ -25,6 +25,7 @@ const MenuBottomNavigation = (props) => {
         event.preventDefault()
         props.reset()
         props.setStep(1)
+        console.log("order:", props.answers)
         alert("order submitted")
     }
 
@@ -33,10 +34,10 @@ const MenuBottomNavigation = (props) => {
             {props.step === 5 ?
                 <Button onClick={submitButtonHandler} name='submit' />
                 :
-                <Button onClick={nextButtonHandler} name='next' />
+                <Button onClick={nextButtonHandler} name={`to ${props.stepNames[props.step]}`} />
             }
             {props.step === 1 ? '' :
-                <Button onClick={previousButtonHandler} name='previous' />
+                <Button onClick={previousButtonHandler} name={`to ${props.stepNames[props.step - 1]}`} />
             }
         </div>
     )

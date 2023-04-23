@@ -6,13 +6,11 @@ import fakeToppingList from '../Datas/fakeToppingsList'
 import fakeSaucesList from '../Datas/fakeSaucesList'
 import fakeSidesMenu from '../Datas/fakeSidesMenu'
 import fakeDrinksMenu from '../Datas/fakeDrinksMenu'
-import MenuBottomNavigation from './MenuBottomNavigation'
 import MenuOrderRecap from './MenuOrderRecap'
 
 
 const Test = () => {
     const [step, setStep] = useState(1)
-
     const stepNames = ['Toppings', 'Sauces', 'Sides', 'Drinks', 'Recap']
 
     const [answers, setAnswers] = useState({
@@ -22,9 +20,39 @@ const Test = () => {
         drink: {}
     })
 
+    const optionsDatas = [
+        {
+            id: 1,
+            title: "How About Some Toppings?",
+            list: fakeToppingList,
+            category: "toppings",
+            exclusive: "",
+        },
+        {
+            id: 2,
+            title: "What about the sauces?",
+            list: fakeSaucesList,
+            category: "sauces",
+            exclusive: "",
+        },
+        {
+            id: 3,
+            title: "Do you want some sides with that?",
+            list: fakeSidesMenu,
+            category: "sides",
+            exclusive: "true",
+        },
+        {
+            id: 4,
+            title: "Are you thirsty?",
+            list: fakeDrinksMenu,
+            category: "drink",
+            exclusive: "true",
+        },
+    ]
+
     const answerHandler = (event) => {
-        console.log("hello")
-        console.log(event)
+        console.log("start",answers)
         const category = [event.target.attributes[3].value]
         const exclusive = [event.target.attributes[4].value][0]
         const updatedAnswers = {
@@ -35,91 +63,36 @@ const Test = () => {
         }
         updatedAnswers[category][event.target.name] = event.target.checked
         setAnswers(updatedAnswers)
+        console.log('end', answers)
     }
 
-    const Step1 = () => {
-        return (
-            <Options
-                title="How About Some Toppings?"
-                list={fakeToppingList}
-                onChange={answerHandler}
-                answers={answers}
-                category="toppings"
-                exclusive=""
-                step={step}
-                setStep={setStep}
-                stepNames={stepNames}
-            />      
-        )
-    }
+    const optionsDisplay = optionsDatas.map(item => 
+        <Options
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            list={item.list}
+            onChange={answerHandler}
+            answers={answers}
+            category={item.category}
+            exclusive={item.exclusive}
+            step={step}
+            setStep={setStep}
+            stepNames={stepNames}
+        />
+    )
 
-    const Step2 = () => {
-        return (
-            <Options
-                title="What about the sauce?"
-                list={fakeSaucesList}
-                onChange={answerHandler}
-                answers={answers}
-                category="sauces"
-                exclusive=""
-                step={step}
-                setStep={setStep}
-                stepNames={stepNames}
-            />
-        )
-    }
-
-    const Step3 = () => {
-        return (
-            <Options
-                title="Do you want some sides with that?"
-                list={fakeSidesMenu}
-                onChange={answerHandler}
-                answers={answers}
-                category="sides"
-                exclusive="true"
-                step={step}
-                setStep={setStep}
-                stepNames={stepNames}
-            />      
-        )
-    }
-
-    const Step4 = () => {
-        return (
-            <Options
-                title="Are you thirsty?"
-                list={fakeDrinksMenu}
-                onChange={answerHandler}
-                answers={answers}
-                category="drink"
-                exclusive="true"
-                step={step}
-                setStep={setStep}
-                stepNames={stepNames}
-            />
-        )
-    }
-
-    const Step5 = () => {
-        return (
+    return (
+        <div className={classes.module}>
+            <NavigationBar step={step} setStep={setStep} />
+            {optionsDisplay}
             <MenuOrderRecap
                 answers={answers}
                 step={step}
                 setStep={setStep}
                 setAnswers={setAnswers}
+                stepNames={stepNames}
             />
-        )
-    }
-
-    return (
-        <div className={classes.module}>
-            <NavigationBar step={step} setStep={setStep} />
-            {step === 1 ? <Step1 /> : ''}
-            {step === 2 ? <Step2 /> : ''}
-            {step === 3 ? <Step3 /> : ''}
-            {step === 4 ? <Step4 /> : ''}
-            {step === 5 ? <Step5 /> : ''}
         </div>       
     )
 }
